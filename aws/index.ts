@@ -18,7 +18,7 @@ const role = new aws.iam.Role("secure-cloud-access", {
         Condition: {
           StringLike: {
             "token.actions.githubusercontent.com:sub":
-              "repo:jaxxstorm/aws-secure-access:*",
+              "repo:jaxxstorm/secure-cloud-access:*",
           },
         },
         Principal: {
