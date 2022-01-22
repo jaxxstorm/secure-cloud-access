@@ -1,0 +1,22 @@
+# The workflow Creates static website using aws s3
+name: AWS Workflow
+on:
+  push
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  CheckAccess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v2
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: arn:aws:iam::609316800003:role/secure-cloud-access-aa46ea9
+          role-session-name: githubactions
+          aws-region: us-west-2
+      - name:  Check permissions
+        run: |
+          aws sts get-caller-identity
