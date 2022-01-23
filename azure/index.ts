@@ -24,7 +24,7 @@ const adSpPassword = new azuread.ServicePrincipalPassword(
 
 new azuread.ApplicationFederatedIdentityCredential("gha", {
   audiences: ["api://AzureADTokenExchange"],
-  subject: "repo:jaxxstorm/secure-cloud-access",
+  subject: "repo:jaxxstorm/secure-cloud-access:*",
   issuer: "https://token.actions.githubusercontent.com/",
   applicationObjectId: adApp.objectId,
   displayName: "github-actions",
