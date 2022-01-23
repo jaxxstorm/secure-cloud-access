@@ -20,5 +20,4 @@ jobs:
       name: 'gcloud'
       run: |-
         gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}" --project briggs-237615
-        gcloud services list
         gcloud auth list
