@@ -27,7 +27,7 @@ const identityPoolProvider = new gcp.iam.WorkloadIdentityPoolProvider(
       issuerUri: "https://token.actions.githubusercontent.com",
     },
     attributeMapping: {
-      "google.subject": "assertion.sub",
+      "google.subject": "assertion.repository",
       "attribute.actor": "assertion.actor",
       "attribute.aud": "assertion.aud",
       "attribute.repository": "assertion.repository",
