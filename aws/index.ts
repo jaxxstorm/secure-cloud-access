@@ -1,5 +1,5 @@
-import * as pulumi from "@pulumi/pulumi";
 import * as aws from "@pulumi/aws";
+import * as github from "@pulumi/github"
 
 const oidcProvider = new aws.iam.OpenIdConnectProvider("secure-cloud-access", {
   thumbprintLists: ["6938fd4d98bab03faadb97b34396831e3780aea1"],
@@ -36,6 +36,12 @@ partition.then((p) => {
     policyArn: `arn:${p.partition}:iam::aws:policy/ReadOnlyAccess`,
     roles: [role.name],
   });
+});
+
+new github.ActionsSecret("roleArn", {
+  repository: "secure-cloud-access",
+  secretName: "ROLE_ARN",
+  plaintextValue: role.arn,
 });
 
 export const roleArn = role.arn;

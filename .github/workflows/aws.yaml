@@ -14,7 +14,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
-          role-to-assume: arn:aws:iam::609316800003:role/secure-cloud-access-aa46ea9
+          role-to-assume: ${{ secrets.ROLE_ARN }}
           role-session-name: githubactions
           aws-region: us-west-2
       - name:  Check permissions
