@@ -5,6 +5,7 @@
     },
     "dependencies": {
         "@pulumi/gcp": "^5.0.0",
+        "@pulumi/github": "^4.9.1",
         "@pulumi/google-native": "^0.11.0",
         "@pulumi/pulumi": "^3.0.0"
     }
