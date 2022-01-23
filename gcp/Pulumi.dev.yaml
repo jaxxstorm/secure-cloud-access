@@ -1,0 +1,4 @@
+config:
+  gcp:project: briggs-237615
+  google-native:project: briggs-237615
+  google-native:region: us-west1
